@@ -96,6 +96,8 @@ toolbarDock::toolbarDock(QWidget *parent)
 	// ui->actionDisplay->connect(ui->actionDisplay, SIGNAL( toggled(bool) ), this, SLOT( setIconMode(bool) ) );
 	// connect( ui->actionDisplay, SIGNAL( QAction::triggered(bool) ), this, SLOT( setIconMode(bool) ) );
 
+	ui->toolbarContents->installEventFilter(this);
+
 	connect(ui->floatButton, SIGNAL(clicked()), this, SLOT(floatToolbar()));
 	connect(ui->streamButton, SIGNAL(clicked()), this,
 		SLOT(toggleStream()));
@@ -139,8 +141,18 @@ bool toolbarDock::eventFilter(QObject *object, QEvent *event)
 	// 	return false;
 	// }
 	UNUSED_PARAMETER(object);
-	UNUSED_PARAMETER(event);
-	return false;
+
+	if (event->type() == QEvent::Resize) {
+		if (ui->toolbarContents->width() < 1280) {
+			ui->toolbarControlFiller->setMinimumWidth(0);
+		} else {
+			ui->toolbarControlFiller->setMinimumWidth(46);
+		}
+
+		return true;
+	} else {
+		return false;
+	}
 }
 
 void toolbarDock::configureStatus()
@@ -182,10 +194,10 @@ void toolbarDock::checkDock()
 
 	if (isLocked) {
 		ui->toolbarDockControls->hide();
-		ui->toolbarControlFiller->show();
+		ui->toolbarControlFiller->setMaximumWidth(96);
 	} else {
 		ui->toolbarDockControls->show();
-		ui->toolbarControlFiller->hide();
+		ui->toolbarControlFiller->setMaximumWidth(46);
 	}
 
 	if (isDocked) {

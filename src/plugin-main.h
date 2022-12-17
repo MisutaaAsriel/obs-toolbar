@@ -3,7 +3,6 @@
 #include <obs-frontend-api.h>
 #include <QDockWidget>
 #include "obs.hpp"
-// #include <obs-basic-stub.h>
 #include <QTimer>
 #include <QTime>
 

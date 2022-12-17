@@ -1,13 +1,13 @@
 /********************************************************************************
-** Form generated from reading UI file 'toolbardockVQalbe.ui'
+** Form generated from reading UI file 'toolbardockxVGQKq.ui'
 **
 ** Created by: Qt User Interface Compiler version 6.4.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
 
-#ifndef TOOLBARDOCKVQALBE_H
-#define TOOLBARDOCKVQALBE_H
+#ifndef TOOLBARDOCKXVGQKQ_H
+#define TOOLBARDOCKXVGQKQ_H
 
 #include <QtCore/QVariant>
 #include <QtGui/QIcon>
@@ -31,7 +31,6 @@ public:
 	QToolButton *floatButton;
 	QSpacerItem *Spacer_Float;
 	QToolButton *modeSwitch;
-	QSpacerItem *Spacer_Filler;
 	QWidget *toolbarControlFiller;
 	QSpacerItem *Spacer_Center2;
 	QFrame *toolbarDisplay;
@@ -63,7 +62,7 @@ public:
 	{
 		if (toolbarDock->objectName().isEmpty())
 			toolbarDock->setObjectName("toolbarDock");
-		toolbarDock->resize(1366, 52);
+		toolbarDock->resize(1090, 52);
 		QSizePolicy sizePolicy(QSizePolicy::Expanding,
 				       QSizePolicy::MinimumExpanding);
 		sizePolicy.setHorizontalStretch(0);
@@ -71,12 +70,12 @@ public:
 		sizePolicy.setHeightForWidth(
 			toolbarDock->sizePolicy().hasHeightForWidth());
 		toolbarDock->setSizePolicy(sizePolicy);
-		toolbarDock->setMinimumSize(QSize(1282, 52));
+		toolbarDock->setMinimumSize(QSize(990, 52));
 		toolbarDock->setMaximumSize(QSize(524287, 54));
 		toolbarDock->setContextMenuPolicy(Qt::ActionsContextMenu);
 		toolbarDock->setStyleSheet(QString::fromUtf8(
 			"#toolbarDock  {\n"
-			"min-width: 1280px;\n"
+			"min-width: 960px;\n"
 			"max-height: 52px;\n"
 			"padding: 0px;\n"
 			"}\n"
@@ -146,7 +145,7 @@ public:
 		floatButton->setSizePolicy(sizePolicy2);
 		floatButton->setMinimumSize(QSize(34, 34));
 		floatButton->setMaximumSize(QSize(34, 34));
-		floatButton->setAutoFillBackground(false);
+		floatButton->setAutoFillBackground(true);
 		QIcon icon;
 		icon.addFile(
 			QString::fromUtf8(":/res/images/sources/window.svg"),
@@ -167,14 +166,14 @@ public:
 		modeSwitch->setObjectName("modeSwitch");
 		QSizePolicy sizePolicy3(QSizePolicy::Expanding,
 					QSizePolicy::Fixed);
-		sizePolicy3.setHorizontalStretch(0);
+		sizePolicy3.setHorizontalStretch(2);
 		sizePolicy3.setVerticalStretch(0);
 		sizePolicy3.setHeightForWidth(
 			modeSwitch->sizePolicy().hasHeightForWidth());
 		modeSwitch->setSizePolicy(sizePolicy3);
 		modeSwitch->setMinimumSize(QSize(130, 34));
 		modeSwitch->setMaximumSize(QSize(194, 34));
-		modeSwitch->setAutoFillBackground(false);
+		modeSwitch->setAutoFillBackground(true);
 		QIcon icon1;
 		icon1.addFile(
 			QString::fromUtf8(":/res/images/sources/slideshow.svg"),
@@ -186,19 +185,18 @@ public:
 
 		horizontalLayout->addWidget(modeSwitch);
 
-		Spacer_Filler = new QSpacerItem(46, 20, QSizePolicy::Fixed,
-						QSizePolicy::Minimum);
-
-		horizontalLayout->addItem(Spacer_Filler);
-
 		toolbarControlFiller = new QWidget(toolbarContents);
 		toolbarControlFiller->setObjectName("toolbarControlFiller");
 		toolbarControlFiller->setEnabled(true);
-		sizePolicy1.setHeightForWidth(
+		QSizePolicy sizePolicy4(QSizePolicy::MinimumExpanding,
+					QSizePolicy::Preferred);
+		sizePolicy4.setHorizontalStretch(0);
+		sizePolicy4.setVerticalStretch(0);
+		sizePolicy4.setHeightForWidth(
 			toolbarControlFiller->sizePolicy().hasHeightForWidth());
-		toolbarControlFiller->setSizePolicy(sizePolicy1);
+		toolbarControlFiller->setSizePolicy(sizePolicy4);
 		toolbarControlFiller->setMinimumSize(QSize(46, 20));
-		toolbarControlFiller->setMaximumSize(QSize(46, 20));
+		toolbarControlFiller->setMaximumSize(QSize(96, 20));
 
 		horizontalLayout->addWidget(toolbarControlFiller);
 
@@ -210,22 +208,22 @@ public:
 
 		toolbarDisplay = new QFrame(toolbarContents);
 		toolbarDisplay->setObjectName("toolbarDisplay");
-		QSizePolicy sizePolicy4(QSizePolicy::Maximum,
+		QSizePolicy sizePolicy5(QSizePolicy::Maximum,
 					QSizePolicy::Fixed);
-		sizePolicy4.setHorizontalStretch(0);
-		sizePolicy4.setVerticalStretch(0);
-		sizePolicy4.setHeightForWidth(
+		sizePolicy5.setHorizontalStretch(0);
+		sizePolicy5.setVerticalStretch(0);
+		sizePolicy5.setHeightForWidth(
 			toolbarDisplay->sizePolicy().hasHeightForWidth());
-		toolbarDisplay->setSizePolicy(sizePolicy4);
+		toolbarDisplay->setSizePolicy(sizePolicy5);
 		toolbarDisplay->setMinimumSize(QSize(458, 30));
-		toolbarDisplay->setMaximumSize(QSize(610, 30));
+		toolbarDisplay->setMaximumSize(QSize(650, 30));
 		toolbarDisplay->setAcceptDrops(false);
 		toolbarDisplay->setAutoFillBackground(false);
 		toolbarDisplay->setStyleSheet(QString::fromUtf8(
 			"#toolbarDisplay {\n"
 			"padding: 4px;\n"
 			"min-width: 448px;\n"
-			"max-width: 600px;\n"
+			"max-width: 640px;\n"
 			"}\n"
 			"\n"
 			"#toolbarDisplay QLabel[themeID=\"toolDIsplaySeparator\"] {\n"
@@ -247,13 +245,13 @@ public:
 		statusStreamLabel = new QLabel(toolbarDisplay);
 		statusStreamLabel->setObjectName("statusStreamLabel");
 		statusStreamLabel->setEnabled(true);
-		QSizePolicy sizePolicy5(QSizePolicy::Preferred,
+		QSizePolicy sizePolicy6(QSizePolicy::Preferred,
 					QSizePolicy::Preferred);
-		sizePolicy5.setHorizontalStretch(0);
-		sizePolicy5.setVerticalStretch(0);
-		sizePolicy5.setHeightForWidth(
+		sizePolicy6.setHorizontalStretch(0);
+		sizePolicy6.setVerticalStretch(0);
+		sizePolicy6.setHeightForWidth(
 			statusStreamLabel->sizePolicy().hasHeightForWidth());
-		statusStreamLabel->setSizePolicy(sizePolicy5);
+		statusStreamLabel->setSizePolicy(sizePolicy6);
 		statusStreamLabel->setTextFormat(Qt::PlainText);
 		statusStreamLabel->setScaledContents(false);
 		statusStreamLabel->setTextInteractionFlags(
@@ -273,9 +271,9 @@ public:
 
 		statusStreamStatus = new QLabel(toolbarDisplay);
 		statusStreamStatus->setObjectName("statusStreamStatus");
-		sizePolicy5.setHeightForWidth(
+		sizePolicy6.setHeightForWidth(
 			statusStreamStatus->sizePolicy().hasHeightForWidth());
-		statusStreamStatus->setSizePolicy(sizePolicy5);
+		statusStreamStatus->setSizePolicy(sizePolicy6);
 		statusStreamStatus->setTextFormat(Qt::PlainText);
 		statusStreamStatus->setScaledContents(false);
 		statusStreamStatus->setTextInteractionFlags(
@@ -298,9 +296,9 @@ public:
 
 		statusRecordLabel = new QLabel(toolbarDisplay);
 		statusRecordLabel->setObjectName("statusRecordLabel");
-		sizePolicy5.setHeightForWidth(
+		sizePolicy6.setHeightForWidth(
 			statusRecordLabel->sizePolicy().hasHeightForWidth());
-		statusRecordLabel->setSizePolicy(sizePolicy5);
+		statusRecordLabel->setSizePolicy(sizePolicy6);
 		statusRecordLabel->setMinimumSize(QSize(0, 0));
 		statusRecordLabel->setTextFormat(Qt::PlainText);
 		statusRecordLabel->setScaledContents(false);
@@ -322,9 +320,9 @@ public:
 
 		statusRecordStatus = new QLabel(toolbarDisplay);
 		statusRecordStatus->setObjectName("statusRecordStatus");
-		sizePolicy5.setHeightForWidth(
+		sizePolicy6.setHeightForWidth(
 			statusRecordStatus->sizePolicy().hasHeightForWidth());
-		statusRecordStatus->setSizePolicy(sizePolicy5);
+		statusRecordStatus->setSizePolicy(sizePolicy6);
 		statusRecordStatus->setTextFormat(Qt::PlainText);
 		statusRecordStatus->setScaledContents(false);
 		statusRecordStatus->setTextInteractionFlags(
@@ -365,9 +363,9 @@ public:
 
 		statusSceneName = new QLabel(toolbarDisplay);
 		statusSceneName->setObjectName("statusSceneName");
-		sizePolicy5.setHeightForWidth(
+		sizePolicy6.setHeightForWidth(
 			statusSceneName->sizePolicy().hasHeightForWidth());
-		statusSceneName->setSizePolicy(sizePolicy5);
+		statusSceneName->setSizePolicy(sizePolicy6);
 		statusSceneName->setMaximumSize(QSize(128, 16777215));
 		statusSceneName->setTextFormat(Qt::PlainText);
 		statusSceneName->setTextInteractionFlags(Qt::NoTextInteraction);
@@ -423,7 +421,7 @@ public:
 		virtualCamButton->setSizePolicy(sizePolicy2);
 		virtualCamButton->setMinimumSize(QSize(34, 34));
 		virtualCamButton->setMaximumSize(QSize(34, 34));
-		virtualCamButton->setAutoFillBackground(false);
+		virtualCamButton->setAutoFillBackground(true);
 		QIcon icon2;
 		icon2.addFile(
 			QString::fromUtf8(":/res/Images/video-inactive.svg"),
@@ -450,7 +448,7 @@ public:
 		recordButton->setSizePolicy(sizePolicy2);
 		recordButton->setMinimumSize(QSize(34, 34));
 		recordButton->setMaximumSize(QSize(34, 34));
-		recordButton->setAutoFillBackground(false);
+		recordButton->setAutoFillBackground(true);
 		QIcon icon3;
 		icon3.addFile(QString::fromUtf8(
 				      ":/res/images/recording-inactive.svg"),
@@ -485,7 +483,7 @@ public:
 		streamButton->setSizePolicy(sizePolicy3);
 		streamButton->setMinimumSize(QSize(130, 34));
 		streamButton->setMaximumSize(QSize(194, 34));
-		streamButton->setAutoFillBackground(false);
+		streamButton->setAutoFillBackground(true);
 		QIcon icon4;
 		icon4.addFile(QString::fromUtf8(
 				      ":/res/images/streaming-inactive.svg"),
@@ -650,4 +648,4 @@ class toolbarDock : public Ui_toolbarDock {};
 
 QT_END_NAMESPACE
 
-#endif // TOOLBARDOCKVQALBE_H
+#endif // TOOLBARDOCKXVGQKQ_H
