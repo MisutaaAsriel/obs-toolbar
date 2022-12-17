@@ -1,13 +1,13 @@
 /********************************************************************************
-** Form generated from reading UI file 'toolbardockxVGQKq.ui'
+** Form generated from reading UI file 'toolbardock.ui'
 **
 ** Created by: Qt User Interface Compiler version 6.4.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
 
-#ifndef TOOLBARDOCKXVGQKQ_H
-#define TOOLBARDOCKXVGQKQ_H
+#ifndef UI_TOOLBARDOCK_H
+#define UI_TOOLBARDOCK_H
 
 #include <QtCore/QVariant>
 #include <QtGui/QIcon>
@@ -507,4 +507,4 @@ namespace Ui {
 
 QT_END_NAMESPACE
 
-#endif // TOOLBARDOCKXVGQKQ_H
+#endif // UI_TOOLBARDOCK_H

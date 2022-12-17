@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1366</width>
+    <width>1090</width>
     <height>52</height>
    </rect>
   </property>
@@ -18,7 +18,7 @@
   </property>
   <property name="minimumSize">
    <size>
-    <width>1282</width>
+    <width>990</width>
     <height>52</height>
    </size>
   </property>
@@ -33,7 +33,7 @@
   </property>
   <property name="styleSheet">
    <string notr="true">#toolbarDock  {
-min-width: 1280px;
+min-width: 960px;
 max-height: 52px;
 padding: 0px;
 }
@@ -170,7 +170,7 @@ max-width: 192px;
           <string>Dock/Undock</string>
          </property>
          <property name="autoFillBackground">
-          <bool>false</bool>
+          <bool>true</bool>
          </property>
          <property name="text">
           <string/>
@@ -204,7 +204,7 @@ max-width: 192px;
      <widget class="QToolButton" name="modeSwitch">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-        <horstretch>0</horstretch>
+        <horstretch>2</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
       </property>
@@ -227,7 +227,7 @@ max-width: 192px;
        <string>Basic.TogglePreviewProgramMode</string>
       </property>
       <property name="autoFillBackground">
-       <bool>false</bool>
+       <bool>true</bool>
       </property>
       <property name="text">
        <string>Basic.TogglePreviewProgramMode</string>
@@ -251,28 +251,12 @@ max-width: 192px;
      </widget>
     </item>
     <item>
-     <spacer name="Spacer_Filler">
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-      <property name="sizeType">
-       <enum>QSizePolicy::Fixed</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>46</width>
-        <height>20</height>
-       </size>
-      </property>
-     </spacer>
-    </item>
-    <item>
      <widget class="QWidget" name="toolbarControlFiller" native="true">
       <property name="enabled">
        <bool>true</bool>
       </property>
       <property name="sizePolicy">
-       <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+       <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
@@ -285,7 +269,7 @@ max-width: 192px;
       </property>
       <property name="maximumSize">
        <size>
-        <width>46</width>
+        <width>96</width>
         <height>20</height>
        </size>
       </property>
@@ -329,7 +313,7 @@ max-width: 192px;
       </property>
       <property name="maximumSize">
        <size>
-        <width>610</width>
+        <width>650</width>
         <height>30</height>
        </size>
       </property>
@@ -343,7 +327,7 @@ max-width: 192px;
        <string notr="true">#toolbarDisplay {
 padding: 4px;
 min-width: 448px;
-max-width: 600px;
+max-width: 640px;
 }
 
 #toolbarDisplay QLabel[themeID=&quot;toolDIsplaySeparator&quot;] {
@@ -802,7 +786,7 @@ margin: 0px 5px;
        <string>Basic.Main.StartVirtualCam</string>
       </property>
       <property name="autoFillBackground">
-       <bool>false</bool>
+       <bool>true</bool>
       </property>
       <property name="icon">
        <iconset resource="toolbar.qrc">
@@ -869,7 +853,7 @@ margin: 0px 5px;
        <string>Basic.Main.StartRecording</string>
       </property>
       <property name="autoFillBackground">
-       <bool>false</bool>
+       <bool>true</bool>
       </property>
       <property name="icon">
        <iconset resource="../../obs-studio/UI/forms/obs.qrc">
@@ -913,7 +897,7 @@ margin: 0px 5px;
      <widget class="QToolButton" name="streamButton">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-        <horstretch>0</horstretch>
+        <horstretch>2</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
       </property>
@@ -936,7 +920,7 @@ margin: 0px 5px;
        <string>Basic.Main.StartStreaming</string>
       </property>
       <property name="autoFillBackground">
-       <bool>false</bool>
+       <bool>true</bool>
       </property>
       <property name="text">
        <string>Basic.Main.StartStreaming</string>
