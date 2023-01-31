@@ -56,7 +56,7 @@ bool obs_module_load(void)
 	return true;
 }
 
-auto cpuUsage = os_cpu_usage_info_start();
+os_cpu_usage_info_t *cpuUsage;
 
 void obs_module_unload()
 {
@@ -82,6 +82,7 @@ void obsEventDidFire(obs_frontend_event event, void *object);
 toolbarDock::toolbarDock(QWidget *parent)
 	: QDockWidget(parent, Qt::Window), ui(new Ui::toolbarDock)
 {
+	cpuUsage = os_cpu_usage_info_start();
 	ui->setupUi(this);
 	titlebar = this->titleBarWidget();
 
@@ -315,6 +316,7 @@ void toolbarDock::checkScene()
 		128, 0);
 
 	ui->statusSceneName->setText(elidedName);
+	obs_source_release(scene);
 }
 
 void toolbarDock::toggleStudio()
