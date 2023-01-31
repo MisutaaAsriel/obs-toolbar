@@ -15,6 +15,14 @@ on:
     branches:
       - master
       - main
+  workflow_dispatch:
+    paths-ignore:
+      - '**.md'
+    branches:
+      - master
+      - main
+    tags:
+      - '*'
 
 env:
   PLUGIN_NAME: 'obs-toolbar'
@@ -23,7 +31,7 @@ jobs:
   clang_check:
     name: 01 - Code Format Check
     runs-on: ubuntu-22.04
-    if: "!contains(github.event.head_commit.message, '[skip-ci]')"
+    if: always()
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -50,7 +58,7 @@ jobs:
       matrix:
         arch: [x86_64, arm64, universal]
     if: "!contains(github.event.head_commit.message, '[skip-ci]')"
-    needs: [clang_check]
+#    needs: [clang_check]
     outputs:
       commitHash: ${{ steps.setup.outputs.commitHash }}
     env:
@@ -180,7 +188,7 @@ jobs:
       matrix:
         arch: [x86_64]
     if: "!contains(github.event.head_commit.message, '[skip-ci]')"
-    needs: [clang_check]
+#    needs: [clang_check]
     outputs:
       commitHash: ${{ steps.setup.outputs.commitHash }}
     defaults:
@@ -258,7 +266,7 @@ jobs:
       matrix:
         arch: [x64]
     if: "!contains(github.event.head_commit.message, '[skip-ci]')"
-    needs: [clang_check]
+#    needs: [clang_check]
     outputs:
       commitHash: ${{ steps.setup.outputs.commitHash }}
     defaults:

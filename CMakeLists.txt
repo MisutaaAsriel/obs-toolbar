@@ -20,8 +20,7 @@ set(LINUX_MAINTAINER_EMAIL "8140068+MisutaaAsriel@users.noreply.github.com")
 # e.g. in Xcode or Visual Studio
 target_sources(${CMAKE_PROJECT_NAME} PRIVATE src/plugin-main.cpp forms/toolbar.qrc)
 
-# ../obs-studio/UI/window-basic-main.cpp
-# ../obs-studio/UI/window-basic-settings.cpp
+# ../obs-studio/UI/window-basic-main.cpp ../obs-studio/UI/window-basic-settings.cpp
 
 # add_subdirectory(../obs-studio/deps/libff deps)
 
@@ -39,8 +38,8 @@ include(cmake/ObsPluginHelpers.cmake)
 find_package(obs-frontend-api REQUIRED)
 target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE OBS::obs-frontend-api)
 
-# AUTOUIC Paths
-# AUTOUIC_SEARCH_PATHS "${CMAKE_SOURCE_DIR}/forms;${CMAKE_SOURCE_DIR}/../obs-studio/UI/forms"
+# AUTOUIC Paths AUTOUIC_SEARCH_PATHS
+# "${CMAKE_SOURCE_DIR}/forms;${CMAKE_SOURCE_DIR}/../obs-studio/UI/forms"
 
 # Uncomment those lines if you want to use Qt in your plugin
 
@@ -63,7 +62,8 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE src/plugin-macros.generated.h)
 
 # --- Platform-independent build settings ---
 
-target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE ${CMAKE_SOURCE_DIR}/src ${CMAKE_SOURCE_DIR}/forms)
+target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE ${CMAKE_SOURCE_DIR}/src
+                                                         ${CMAKE_SOURCE_DIR}/forms)
 
 target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE OBS::libobs)
 
