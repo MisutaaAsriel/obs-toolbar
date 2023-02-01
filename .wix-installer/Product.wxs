@@ -1,0 +1,35 @@
+<Wix xmlns="http://wixtoolset.org/schemas/v4/wxs">
+    <Package Name="OBS Toolbar" Language="1033" Manufacturer="Asriel Dreemurr" Version="0.1.2.0" UpgradeCode="8c7d85db-b0d1-4a9a-85ea-130836aeef67" InstallerVersion="200">
+      <Icon Id="icon.ico" SourceFile="product.ico"/>
+      <Property Id="ARPPRODUCTICON" Value="icon.ico" />
+      
+  
+      <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+      <MediaTemplate EmbedCab="yes" />
+  
+      <Feature Id="ProductFeature" Title="OBS Toolbar" Level="1">
+        <ComponentGroupRef Id="ProductComponents" />
+      </Feature>
+    </Package>
+  
+    <Fragment>
+        <StandardDirectory Id="ProgramFiles64Folder">
+          <Directory Id="OBSFOLDER" Name="obs-studio">
+              <Directory Id="PLUGINROOT" Name="obs-plugins">
+                  <Directory Id="PLUGINDEST" Name="64bit" />
+              </Directory>
+          </Directory>
+        </StandardDirectory>
+      </Fragment>
+  
+    <Fragment>
+      <ComponentGroup Id="ProductComponents" Directory="PLUGINDEST">
+        <Component Id="cmpPluginDLL" Guid="{52647e31-8073-4fb8-bd74-df23e0abcefc}">
+          <File Id="obs_toolbar.dll" Source="obs-toolbar.dll" />
+        </Component>
+        <Component Id="cmpPluginPDB" Guid="{79c264f9-dd4e-43ee-bef2-e4aef8811e0d}">
+          <File Id="obs_toolbar.pdb" Source="obs-toolbar.pdb" />
+        </Component>
+      </ComponentGroup>
+    </Fragment>
+  </Wix>
