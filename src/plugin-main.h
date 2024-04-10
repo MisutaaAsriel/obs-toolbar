@@ -21,6 +21,7 @@ public:
 	void checkStreamingStatus(bool inTransition = false,
 				  bool transitionState = false);
 	void checkVirtualCamera();
+	void checkReplayBufferStatus();
 	void checkStudio();
 	void checkScene();
 	QTime recordingTime = QTime(0, 0);
@@ -38,6 +39,7 @@ private:
 	bool isInStudio;
 	bool isStreaming = false;
 	bool isRecording = false;
+	bool isReplayBufferRunning = false;
 	bool virtuallyCaptured;
 
 private slots:
@@ -46,6 +48,7 @@ private slots:
 	void toggleStudio();
 	void toggleStream();
 	void toggleRecording();
+	void toggleReplayBuffer();
 	void toggleCapture();
 	void openSettings();
 	void openVirtualCameraSettings();

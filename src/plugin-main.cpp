@@ -104,6 +104,8 @@ toolbarDock::toolbarDock(QWidget *parent)
 		SLOT(toggleStream()));
 	connect(ui->recordButton, SIGNAL(clicked()), this,
 		SLOT(toggleRecording()));
+	connect(ui->replayBufferButton, SIGNAL(clicked()), this,
+		SLOT(toggleReplayBuffer()));
 	connect(ui->modeSwitch, SIGNAL(clicked()), this, SLOT(toggleStudio()));
 	connect(ui->virtualCamButton, SIGNAL(clicked()), this,
 		SLOT(toggleCapture()));
@@ -303,6 +305,27 @@ void toolbarDock::checkVirtualCamera()
 	ui->virtualCamButton->setAccessibleName(tooltext);
 }
 
+void toolbarDock::checkReplayBufferStatus() {
+	isReplayBufferRunning = obs_frontend_replay_buffer_active();
+
+	ui->replayBufferButton->setChecked(isReplayBufferRunning);
+
+	QString tooltext = QCoreApplication::translate(
+		"toolbarDock", "Basic.Main.StartReplayBuffer", nullptr);
+	QString statusText = QCoreApplication::translate(
+		"toolbarDock", "Basic.Stats.Status.Inactive", nullptr);
+
+	if (isReplayBufferRunning) {
+		tooltext = QCoreApplication::translate(
+			"toolbarDock", "Basic.Main.StopRecording", nullptr);
+		statusText = QCoreApplication::translate(
+			"toolbarDock", "Basic.Stats.Status.Active", nullptr);
+	}
+
+	ui->replayBufferButton->setToolTip(tooltext);
+	ui->replayBufferButton->setAccessibleName(tooltext);
+}
+
 void toolbarDock::checkScene()
 {
 	auto scene = obs_frontend_get_current_scene();
@@ -397,6 +420,15 @@ void toolbarDock::toggleCapture()
 		obs_frontend_stop_virtualcam();
 	} else {
 		obs_frontend_start_virtualcam();
+	}
+}
+
+void toolbarDock::toggleReplayBuffer()
+{
+	if (this->isReplayBufferRunning) {
+		obs_frontend_replay_buffer_stop();
+	} else {
+		obs_frontend_replay_buffer_start();
 	}
 }
 
@@ -512,6 +544,12 @@ void obsEventDidFire(obs_frontend_event event, void *object)
 		break;
 	case OBS_FRONTEND_EVENT_SCENE_CHANGED:
 		((toolbarDock *)object)->checkScene();
+		break;
+	case OBS_FRONTEND_EVENT_REPLAY_BUFFER_STARTED:
+		((toolbarDock *)object)->checkReplayBufferStatus();
+		break;
+	case OBS_FRONTEND_EVENT_REPLAY_BUFFER_STOPPED:
+		((toolbarDock *)object)->checkReplayBufferStatus();
 		break;
 	default:
 		break;

@@ -827,6 +827,52 @@ margin: 0px 5px;
      </spacer>
     </item>
     <item alignment="Qt::AlignVCenter">
+      <widget class="QToolButton" name="replayBufferButton">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>34</width>
+         <height>34</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>34</width>
+         <height>34</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string>Basic.Main.StartReplayBuffer</string>
+       </property>
+       <property name="accessibleName">
+        <string>Basic.Main.StartReplayBuffer</string>
+       </property>
+       <property name="autoFillBackground">
+        <bool>true</bool>
+       </property>
+       <property name="icon">
+        <iconset resource="toolbar.qrc">
+          <normaloff>:/res/Images/replay-buffer-inactive.svg</normaloff>
+          <normalon>:/res/Images/replay-buffer-active.svg</normalon>:/res/Images/replay-buffer-inactive.svg
+        </iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>20</width>
+         <height>20</height>
+        </size>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+    <item alignment="Qt::AlignVCenter">
      <widget class="QToolButton" name="recordButton">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">

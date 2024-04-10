@@ -1,6 +1,8 @@
 <RCC>
   <qresource prefix="/res">
     <file>Images/redo.svg</file>
+    <file>Images/replay-buffer-active.svg</file>
+    <file>Images/replay-buffer-inactive.svg</file>
     <file>Images/video-active.svg</file>
     <file>Images/video-config.svg</file>
     <file>Images/video-inactive.svg</file>
