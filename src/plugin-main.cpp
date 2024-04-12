@@ -305,7 +305,8 @@ void toolbarDock::checkVirtualCamera()
 	ui->virtualCamButton->setAccessibleName(tooltext);
 }
 
-void toolbarDock::checkReplayBufferStatus() {
+void toolbarDock::checkReplayBufferStatus()
+{
 	isReplayBufferRunning = obs_frontend_replay_buffer_active();
 
 	ui->replayBufferButton->setChecked(isReplayBufferRunning);
