@@ -313,14 +313,10 @@ void toolbarDock::checkReplayBufferStatus()
 
 	QString tooltext = QCoreApplication::translate(
 		"toolbarDock", "Basic.Main.StartReplayBuffer", nullptr);
-	QString statusText = QCoreApplication::translate(
-		"toolbarDock", "Basic.Stats.Status.Inactive", nullptr);
 
 	if (isReplayBufferRunning) {
 		tooltext = QCoreApplication::translate(
-			"toolbarDock", "Basic.Main.StopRecording", nullptr);
-		statusText = QCoreApplication::translate(
-			"toolbarDock", "Basic.Stats.Status.Active", nullptr);
+			"toolbarDock", "Basic.Main.StopReplayBuffer", nullptr);
 	}
 
 	ui->replayBufferButton->setToolTip(tooltext);

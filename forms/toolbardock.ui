@@ -870,7 +870,29 @@ margin: 0px 5px;
        <property name="checkable">
         <bool>true</bool>
        </property>
+       <property name="themeID" stdset="0">
+        <string>replayBufferButton</string>
+       </property>
       </widget>
+     </item>
+     <item>
+      <spacer name="Spacer_ReplayBuffer">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgba(255,255,255,0.25);</string>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>10</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
      </item>
     <item alignment="Qt::AlignVCenter">
      <widget class="QToolButton" name="recordButton">

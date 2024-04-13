@@ -55,6 +55,7 @@ public:
 	QToolButton *virtualCamButton;
 	QSpacerItem *Spacer_VirtualCam;
 	QToolButton *recordButton;
+	QSpacerItem *Spacer_ReplayBuffer;
 	QToolButton *replayBufferButton;
 	QSpacerItem *Spacer_Live;
 	QToolButton *streamButton;
@@ -227,7 +228,7 @@ public:
 			"max-width: 640px;\n"
 			"}\n"
 			"\n"
-			"#toolbarDisplay QLabel[themeID=\"toolDIsplaySeparator\"] {\n"
+			"#toolbarDisplay QLabel[themeID=\"toolDisplaySeparator\"] {\n"
 			"color: rgba(127,127,127,0.5);\n"
 			"font-weight: 800;\n"
 			"margin: 0px 5px;\n"
@@ -472,10 +473,10 @@ public:
 
                 horizontalLayout->addWidget(replayBufferButton, 0, Qt::AlignVCenter);
 
-                Spacer_Replay = new QSpacerItem(10, 20, QSizePolicy::Fixed,
+                Spacer_ReplayBuffer = new QSpacerItem(10, 20, QSizePolicy::Fixed,
                                               QSizePolicy::Minimum);
 
-                horizontalLayout->addItem(Spacer_Replay);
+                horizontalLayout->addItem(Spacer_ReplayBuffer);
 
 		recordButton = new QToolButton(toolbarContents);
 		recordButton->setObjectName("recordButton");
