@@ -827,6 +827,74 @@ margin: 0px 5px;
      </spacer>
     </item>
     <item alignment="Qt::AlignVCenter">
+      <widget class="QToolButton" name="replayBufferButton">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>34</width>
+         <height>34</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>34</width>
+         <height>34</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string>Basic.Main.StartReplayBuffer</string>
+       </property>
+       <property name="accessibleName">
+        <string>Basic.Main.StartReplayBuffer</string>
+       </property>
+       <property name="autoFillBackground">
+        <bool>true</bool>
+       </property>
+       <property name="icon">
+        <iconset resource="toolbar.qrc">
+          <normaloff>:/res/Images/replay-buffer-inactive.svg</normaloff>
+          <normalon>:/res/Images/replay-buffer-active.svg</normalon>:/res/Images/replay-buffer-inactive.svg
+        </iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>20</width>
+         <height>20</height>
+        </size>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="themeID" stdset="0">
+        <string>replayBufferButton</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="Spacer_ReplayBuffer">
+       <property name="styleSheet">
+        <string notr="true">background-color: rgba(255,255,255,0.25);</string>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>10</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    <item alignment="Qt::AlignVCenter">
      <widget class="QToolButton" name="recordButton">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">

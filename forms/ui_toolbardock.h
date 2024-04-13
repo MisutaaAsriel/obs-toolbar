@@ -55,6 +55,8 @@ public:
 	QToolButton *virtualCamButton;
 	QSpacerItem *Spacer_VirtualCam;
 	QToolButton *recordButton;
+	QSpacerItem *Spacer_ReplayBuffer;
+	QToolButton *replayBufferButton;
 	QSpacerItem *Spacer_Live;
 	QToolButton *streamButton;
 
@@ -226,7 +228,7 @@ public:
 			"max-width: 640px;\n"
 			"}\n"
 			"\n"
-			"#toolbarDisplay QLabel[themeID=\"toolDIsplaySeparator\"] {\n"
+			"#toolbarDisplay QLabel[themeID=\"toolDisplaySeparator\"] {\n"
 			"color: rgba(127,127,127,0.5);\n"
 			"font-weight: 800;\n"
 			"margin: 0px 5px;\n"
@@ -440,6 +442,41 @@ public:
 						    QSizePolicy::Minimum);
 
 		horizontalLayout->addItem(Spacer_VirtualCam);
+
+                replayBufferButton = new QToolButton(toolbarContents);
+                replayBufferButton->setObjectName("replayBufferButton");
+                sizePolicy2.setHeightForWidth(
+                        replayBufferButton->sizePolicy().hasHeightForWidth());
+                replayBufferButton->setSizePolicy(sizePolicy2);
+                replayBufferButton->setMinimumSize(QSize(34, 34));
+                replayBufferButton->setMaximumSize(QSize(34, 34));
+                replayBufferButton->setAutoFillBackground(true);
+                QIcon icon5;
+                icon5.addFile(QString::fromUtf8(
+                                      ":/res/images/replay-buffer-inactive.svg"),
+                              QSize(), QIcon::Normal, QIcon::Off);
+                icon5.addFile(
+                        QString::fromUtf8(":/res/images/replay-buffer-active.svg"),
+                        QSize(), QIcon::Normal, QIcon::On);
+                icon5.addFile(QString::fromUtf8(
+                                      ":/res/images/replay-buffer-inactive.svg"),
+                              QSize(), QIcon::Disabled, QIcon::On);
+                icon5.addFile(QString::fromUtf8(
+                                      ":/res/images/replay-buffer-inactive.svg"),
+                              QSize(), QIcon::Active, QIcon::Off);
+                icon5.addFile(QString::fromUtf8(
+                                      ":/res/images/replay-buffer-inactive.svg"),
+                              QSize(), QIcon::Selected, QIcon::On);
+                replayBufferButton->setIcon(icon5);
+                replayBufferButton->setIconSize(QSize(20, 20));
+                replayBufferButton->setCheckable(true);
+
+                horizontalLayout->addWidget(replayBufferButton, 0, Qt::AlignVCenter);
+
+                Spacer_ReplayBuffer = new QSpacerItem(10, 20, QSizePolicy::Fixed,
+                                              QSizePolicy::Minimum);
+
+                horizontalLayout->addItem(Spacer_ReplayBuffer);
 
 		recordButton = new QToolButton(toolbarContents);
 		recordButton->setObjectName("recordButton");
