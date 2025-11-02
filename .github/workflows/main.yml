@@ -175,7 +175,7 @@ jobs:
 
       - name: Upload Build Artifact
         if: ${{ success() && (github.event_name != 'pull_request' || steps.seekingTesters.outputs.found == 'true') }}
-        uses: actions/upload-artifactç
+        uses: actions/upload-artifact@v5
         with:
           name: ${{ env.PLUGIN_NAME }}-macos-${{ matrix.arch }}-${{ steps.setup.outputs.commitHash }}
           path: ${{ github.workspace }}/plugin/release/${{ env.PLUGIN_NAME }}-*-macos-${{ matrix.arch }}.pkg

@@ -52,7 +52,7 @@ bool obs_module_load(void)
 	// changeTitleBarColor(main_window->winId(), .5, .5, .5 , 1.0)
 #endif
 
-	obs_frontend_add_dock(dock);
+	obs_frontend_add_dock_by_id("com.asriel.obs-toolbar.dock", "Toolbar", dock);
 	return true;
 }
 
